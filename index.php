@@ -15,14 +15,24 @@ session_start();
 <button>Add</button>
 </form>
 
+
 <script>
-//function to mark out the already done items.
 $(document).ready(function(){
+   var itemDone=0;
     $("li").click(function(){
+  if(itemDone==0){
        $(this).css("text-decoration","line-through");
+       itemDone=1;
+       console.log(itemDone);
+  }else{
+      $(this).css("text-decoration","none");
+      itemDone=0;
+       console.log(itemDone);
+  }
     });
   });
 </script>
+
 
 <?php
 
