@@ -1,5 +1,7 @@
 <?php
 // Start the session
+//create form and echo out the input with PHP
+// Add the stripe-through function using j-query
 session_start();
 ?>
 
@@ -15,31 +17,23 @@ session_start();
 <button>Add</button>
 </form>
 
-
 <script>
 $(document).ready(function(){
-   var itemDone=0;
     $("li").click(function(){
-  if(itemDone==0){
-       $(this).css("text-decoration","line-through");
-       itemDone=1;
-       console.log(itemDone);
-  }else{
-      $(this).css("text-decoration","none");
-      itemDone=0;
-       console.log(itemDone);
-  }
+        $(this).css("text-shadow","2px 2px #ff0000");
     });
-  });
+});
+
 </script>
 
 
 <?php
 
 
+
 //Putting all the items in the text field underneath each other in a list.
 if($_POST){
-    echo "<br>"  ."\n<ul>\n<li>"    . $_POST["toDoList"]    ."\n<li>\n<ul>" ;
+    echo "<br>"  ."\n<ul>\n<li>"    . $_POST["toDoList"]   ;
    
    }
 
