@@ -2,6 +2,7 @@
 // Start the session
 //create form and echo out the input with PHP
 // Add the stripe-through function using j-query
+// Add and retake stripe-through function with j-query/also use console.log to 
 session_start();
 ?>
 
@@ -19,11 +20,19 @@ session_start();
 
 <script>
 $(document).ready(function(){
+    var itemStriped=0;
     $("li").click(function(){
+    if(itemStriped==0){
         $(this).css("text-shadow","2px 2px #ff0000");
+        itemStriped=1;
+        console.log(itemStriped);
+    }else{ 
+        $(this).css("text-shadow","none");
+        itemStriped=0;
+        console.log(itemStriped);
+    }
     });
 });
-
 </script>
 
 
