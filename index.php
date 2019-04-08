@@ -38,14 +38,64 @@ $(document).ready(function(){
 
 <?php
 
+// add the items posted in an array. Then put them in a list and call the function with a session variable. 
 
 
+$itemsAdded=$_POST['toDoList'];
+$_SESSION['items']=$itemsAdded;
+//var_dump($_SESSION['items']);
+if(!isset($_SESSION['items'])){
+ $_SESSION['items']=array();
+}
+if(isset($_SESSION['items'])){
+    foreach ($_SESSION['items'] as $productId) {
+        echo $productID,'<br>';
+    }
+}
+
+/*
+if(isset($_SESSION['items'])){
+    foreach ($_SESSION['items'] as $productId) {
+        echo $productID,'<br>';
+    }
+}
+
+
+$itemsAdded=$_POST["toDoList"];
+$_SESSION['items']=$itemsAdded;
+var_dump($_SESSION['items']);
+
+if(!isset($_SESSION['items'])){
+    $_SESSION['items']=array();
+    var_dump($_SESSION['items']);
+}
+
+*/
+
+
+
+
+
+
+
+/*
+
+
+var_dump($_SESSION['items']);
+
+if(isset($_SESSION['items'])){
+    foreach ($_SESSION['items'] as $productID) {
+        echo $productID,'<br>';
+    }
+}
+
+/*
 //Putting all the items in the text field underneath each other in a list.
 if($_POST){
     echo "<br>"  ."\n<ul>\n<li>"    . $_POST["toDoList"]   ;
    
    }
-
+*/
 ?>
 
 
