@@ -30,19 +30,29 @@ session_start();
 </form>
 
 <script>
+//add SessionStorage to save jquery once item is added.
 $(document).ready(function(){
     var itemStriped=0;
     $("li").click(function(){
+        var jqCheck=$(this).index();
+        console.log(jqCheck);
     if(itemStriped==0){
-        $(this).css("text-decoration","line-through");
-        itemStriped=1;
-        console.log(itemStriped);
+    $(this).css("text-decoration","line-through");
+    sessionStorage.setItem($(this).index(),1);
+    itemStriped=1;
+    console.log(itemStriped);
     }else{ 
         $(this).css("text-decoration","none");
         itemStriped=0;
+        sessionStorage.setItem($(this).index(),0);
         console.log(itemStriped);
     }
     });
+    $('li').each(function(i){
+    if(sessionStorage.getItem(i)==1){
+      $(this).css("text-decoration","line-through");
+    }
+ });
 });
 </script>
 
@@ -68,8 +78,9 @@ function updateList(){
     foreach ($_SESSION['toDoItems'] as $item){
     echo "<li>".$item."</li>";
        }
-    echo "</ul>";   
-    var_dump($_SESSION['toDoItems']);  
+    echo "</ul>";  
+    // var_dump is used as a debugging tool , so will be commented out if not needed 
+    //var_dump($_SESSION['toDoItems']);  
 }
 
 
