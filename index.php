@@ -43,16 +43,21 @@ $(document).ready(function(){
 
 
 //var_dump($_SESSION['items']);
-if(!isset($_SESSION['items'])){
+if(isset($_POST['toDoList'])){
+
+if(!(isset($_SESSION['items']))){
  $_SESSION['items']=array();
  $_SESSION['item'][]=$_POST['toDoList'];
- foreach ($_SESSION['items'] as $productId) {
- echo $productID,'<br>';
+ echo"<ul>"
+ foreach ($_SESSION['items'] as $item) {
+ echo "<li>".$item."</li>";
     }
+ echo "</ul>";   
 }else{
  $_SESSION['item'][]=$_POST['toDoList'];
  foreach ($_SESSION['items'] as $productId) {
  echo $productID,'<br>';  
+}
 }
 
 /*
