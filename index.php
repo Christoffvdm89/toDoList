@@ -9,9 +9,17 @@ session_start();
 
 <!DOCTYPE html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/main.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 <html>
 <body>
-<h1>My To Do List</h1>
+    
+<div id ="h1"><h1>Christoff's to do List</h1></div>
+<div id="image">
+<img src="images/christoffcamping2.jpg" alt="">
+</div>
+
+<div id="form">
 
 <!--My form where you can add to the shopping list and -->
 <form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
@@ -66,7 +74,7 @@ if(!(isset($_SESSION['toDoItems']))){
 
 ?>
 
-
+</div>
 
 </body>
 </html>
