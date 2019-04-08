@@ -41,68 +41,29 @@ $(document).ready(function(){
 
 // add the items posted in an array. Then put them in a list and call the function with a session variable. 
 
-
-//var_dump($_SESSION['items']);
 if(isset($_POST['toDoList'])){
-
-if(!(isset($_SESSION['items']))){
- $_SESSION['items']=array();
- $_SESSION['item'][]=$_POST['toDoList'];
- echo"<ul>"
- foreach ($_SESSION['items'] as $item) {
+if(!(isset($_SESSION['toDoItems']))){
+ $_SESSION['toDoItems']=array();
+ $_SESSION['toDoItems'][]=$_POST['toDoList'];
+ echo"<ul>";
+ foreach ($_SESSION['toDoItems'] as $item){
  echo "<li>".$item."</li>";
     }
- echo "</ul>";   
+ echo "</ul>";  
+ var_dump($_SESSION['toDoItems']);
 }else{
- $_SESSION['item'][]=$_POST['toDoList'];
- foreach ($_SESSION['items'] as $productId) {
- echo $productID,'<br>';  
-}
-}
+    $_SESSION['toDoItems'][]=$_POST['toDoList'];
+};
+    echo"<ul>";
+    foreach ($_SESSION['toDoItems'] as $item){
+    echo "<li>".$item."</li>";
+       }
+    echo "</ul>";   
+    var_dump($_SESSION['toDoItems']);
 
-/*
-if(isset($_SESSION['items'])){
-    foreach ($_SESSION['items'] as $productId) {
-        echo $productID,'<br>';
-    }
 }
 
 
-$itemsAdded=$_POST["toDoList"];
-$_SESSION['items']=$itemsAdded;
-var_dump($_SESSION['items']);
-
-if(!isset($_SESSION['items'])){
-    $_SESSION['items']=array();
-    var_dump($_SESSION['items']);
-}
-
-*/
-
-
-
-
-
-
-
-/*
-
-
-var_dump($_SESSION['items']);
-
-if(isset($_SESSION['items'])){
-    foreach ($_SESSION['items'] as $productID) {
-        echo $productID,'<br>';
-    }
-}
-
-/*
-//Putting all the items in the text field underneath each other in a list.
-if($_POST){
-    echo "<br>"  ."\n<ul>\n<li>"    . $_POST["toDoList"]   ;
-   
-   }
-*/
 ?>
 
 
