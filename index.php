@@ -24,11 +24,11 @@ $(document).ready(function(){
     var itemStriped=0;
     $("li").click(function(){
     if(itemStriped==0){
-        $(this).css("text-shadow","2px 2px #ff0000");
+        $(this).css("text-decoration","line-through");
         itemStriped=1;
         console.log(itemStriped);
     }else{ 
-        $(this).css("text-shadow","none");
+        $(this).css("text-decoration","none");
         itemStriped=0;
         console.log(itemStriped);
     }
