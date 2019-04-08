@@ -3,6 +3,7 @@
 //create form and echo out the input with PHP
 // Add the stripe-through function using j-query
 // Add and retake stripe-through function with j-query/also use console.log to 
+//create and array where the to-do items will be stored.
 session_start();
 ?>
 
@@ -41,16 +42,17 @@ $(document).ready(function(){
 // add the items posted in an array. Then put them in a list and call the function with a session variable. 
 
 
-$itemsAdded=$_POST['toDoList'];
-$_SESSION['items']=$itemsAdded;
 //var_dump($_SESSION['items']);
 if(!isset($_SESSION['items'])){
  $_SESSION['items']=array();
-}
-if(isset($_SESSION['items'])){
-    foreach ($_SESSION['items'] as $productId) {
-        echo $productID,'<br>';
+ $_SESSION['item'][]=$_POST['toDoList'];
+ foreach ($_SESSION['items'] as $productId) {
+ echo $productID,'<br>';
     }
+}else{
+ $_SESSION['item'][]=$_POST['toDoList'];
+ foreach ($_SESSION['items'] as $productId) {
+ echo $productID,'<br>';  
 }
 
 /*
