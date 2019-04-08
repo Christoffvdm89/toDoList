@@ -4,16 +4,18 @@
 // Add the stripe-through function using j-query
 // Add and retake stripe-through function with j-query/also use console.log to 
 //create and array where the to-do items will be stored.
+// Add css to the function
 session_start();
 ?>
 
 <!DOCTYPE html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--Add link's to style sheet page and also link to google fonds -->
 <link rel="stylesheet" href="css/main.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 <html>
 <body>
-    
+<!--Putting header, image and form in div's so that that an be styled -->
 <div id ="h1"><h1>Christoff's to do List</h1></div>
 <div id="image">
 <img src="images/christoffcamping2.jpg" alt="">
@@ -48,27 +50,26 @@ $(document).ready(function(){
 <?php
 
 // add the items posted in an array. Then put them in a list and call the function with a session variable. 
+//creating a function for the echoing out of the list for the toDoList so that code won't be repeated.
 
 if(isset($_POST['toDoList'])){
 if(!(isset($_SESSION['toDoItems']))){
  $_SESSION['toDoItems']=array();
  $_SESSION['toDoItems'][]=$_POST['toDoList'];
- echo"<ul>";
- foreach ($_SESSION['toDoItems'] as $item){
- echo "<li>".$item."</li>";
-    }
- echo "</ul>";  
- var_dump($_SESSION['toDoItems']);
+ updateList();
 }else{
     $_SESSION['toDoItems'][]=$_POST['toDoList'];
+    updateList();
 };
+}
+
+function updateList(){
     echo"<ul>";
     foreach ($_SESSION['toDoItems'] as $item){
     echo "<li>".$item."</li>";
        }
     echo "</ul>";   
-    var_dump($_SESSION['toDoItems']);
-
+    var_dump($_SESSION['toDoItems']);  
 }
 
 
