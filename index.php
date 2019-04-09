@@ -30,7 +30,6 @@ session_start();
 </form>
 
 <script>
-//add SessionStorage to save jquery once item is added.
 $(document).ready(function(){
     var itemStriped=0;
     $("li").click(function(){
