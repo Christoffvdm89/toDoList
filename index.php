@@ -11,14 +11,14 @@ session_start();
 <!DOCTYPE html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!--Add link's to style sheet page and also link to google fonds -->
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/styles.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 <html>
 <body>
 <!--Putting header, image and form in div's so that that an be styled -->
 <div id ="h1"><h1>Christoff's to do List</h1></div>
 <div id="image">
-<img src="images/christoffcamping2.jpg" alt="">
+
 </div>
 
 <div id="form">
@@ -73,11 +73,11 @@ if(!(isset($_SESSION['toDoItems']))){
 }
 
 function updateList(){
-    echo"<ul>";
+    echo"<div id='list'><ul>";
     foreach ($_SESSION['toDoItems'] as $item){
     echo "<li>".$item."</li>";
        }
-    echo "</ul>";  
+    echo "</ul></div>";  
     // var_dump is used as a debugging tool , so will be commented out if not needed 
     //var_dump($_SESSION['toDoItems']);  
 }
