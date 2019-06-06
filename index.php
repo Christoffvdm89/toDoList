@@ -25,7 +25,7 @@ session_start();
 
 <!--My form where you can add to the shopping list and -->
 <form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-<input type="text" name="toDoList">
+<input type="text" name="toDoList" autocomplete="off">
 <button>Add</button>
 </form>
 
